@@ -1,0 +1,28 @@
+import java.util.Base64;
+
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
+public class AES {
+	private static String encriptar(String texto, String chave)
+														 throws Exception {
+		Cipher objCifra = Cipher.getInstance("AES/CBC/PKCS5Padding");
+		SecretKey objChave = new SecretKeySpec(chave.getBytes("UTF-8"), "AES");
+		IvParameterSpec objIv = new IvParameterSpec("0123456789101112".getBytes());
+		objCifra.init(Cipher.ENCRYPT_MODE, objChave, objIv);
+		byte[] cifra = objCifra.doFinal(texto.getBytes("UTF-8"));
+		return Base64.getEncoder().encodeToString(cifra);
+		}
+	
+	private static String decriptar(String cifra, String chave)
+			 											 throws Exception {
+		Cipher objCifra = Cipher.getInstance("AES/CBC/PKCS5Padding");
+		SecretKey objChave = new SecretKeySpec(chave.getBytes("UTF-8"), "AES");
+		IvParameterSpec objIv = new IvParameterSpec("0123456789101112".getBytes());
+		objCifra.init(Cipher.DECRYPT_MODE, objChave, objIv);
+		byte[] texto = objCifra.doFinal(Base64.getDecoder().decode(cifra));
+		return new String(texto, "UTF-8");
+		}
+}
