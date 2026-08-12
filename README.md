@@ -72,3 +72,21 @@ Sinta-se à vontade para explorar e trocar uma ideia!
 <div align="center">
   <sub>// segurança começa pelo conhecimento 🔐</sub>
 </div>
+
+---
+
+# 🔐 Java — Cybersecurity | CEUB (English)
+
+Java projects and coursework from Cybersecurity classes at CEUB, exploring real information-security concepts implemented in Java.
+
+## 📚 What's in here
+
+A brute-force password cracker using multiple threads to test password combinations hashed with **SHA-256** (numeric attack 0 to 1 billion; lowercase/uppercase alphabetic attacks of 4–6 letters), SHA-256 hashing via `MessageDigest`, concurrent programming with `Thread`/`Runnable`, and `HashMap`-based hash lookups. Also includes classic cryptography exercises: Vigenère cipher and cryptanalysis, DES/AES, RSA, and Diffie-Hellman.
+
+> ⚠️ **Disclaimer:** educational purposes only, built in a controlled academic environment at CEUB. Do not use for illegal purposes.
+
+## 🔄 Status
+Ongoing — updated as the course progresses.
+
+## 👨‍💻 About
+Computer Science student at CEUB, Brasília.
